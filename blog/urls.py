@@ -1,8 +1,8 @@
-from django.urls import path
+from django.urls import path, re_path
 from blog import views
 
 urlpatterns = [
-    path('', views.index1, name='index1'),
-    path('index2', views.index2, name='index2'),
-    path('index3', views.index3, name='index3'),
+    path('', views.index, name='index1'),
+    path('about/', views.about, kwargs={'name': 'Tom', 'age': 22}),
+    re_path(r'^contact/', views.contact),
 ]
