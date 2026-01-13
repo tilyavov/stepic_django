@@ -1,8 +1,13 @@
-from django.urls import path, re_path
+from django.urls import path, include, re_path
 from blog import views
 
+product_patterns = [
+    path('', views.products),
+    path('new/', views.new),
+    path('top/', views.top),
+]
+
 urlpatterns = [
-    path('', views.index, name='index1'),
-    path('about/', views.about, kwargs={'name': 'Tom', 'age': 22}),
-    re_path(r'^contact/', views.contact),
+    path('', views.index),
+    path('products/', include(product_patterns)),
 ]
