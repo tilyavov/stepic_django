@@ -1,17 +1,10 @@
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
-
+from django.http import HttpResponse, HttpResponseRedirect
 
 def index(request):
     return HttpResponse("Index")
 
-
-def about(request):
-    return HttpResponse("About")
-
-
 def contact(request):
-    return HttpResponseRedirect("/about/")
+    return HttpResponse('Contact')
 
-
-def details(request):
-    return HttpResponsePermanentRedirect("/")
+def support(request):
+    return HttpResponseRedirect('/contact')
