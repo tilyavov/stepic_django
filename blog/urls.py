@@ -3,11 +3,11 @@ from blog import views
 
 product_patterns = [
     path('', views.products),
-    path('new/', views.new),
-    path('top/', views.top),
+    path('comments', views.comments),
+    path('questions', views.questions),
 ]
 
 urlpatterns = [
     path('', views.index),
-    path('products/', include(product_patterns)),
+    path('products/<int:id>/', include(product_patterns)),
 ]
