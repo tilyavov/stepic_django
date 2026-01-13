@@ -2,9 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
+    name_is_company = ['Tajiairnavigation', 'SomonAir']
+    carscompany = 'Audi'
     context = {
-        'my_name': 'Alisher',
-        'my_age': 22
+        'company': name_is_company,
+        'car': carscompany
     }
     return render(request, 'blog/index.html', context)
 
