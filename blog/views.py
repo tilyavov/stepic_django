@@ -4,11 +4,11 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse('Главная страница')
 
-def products(request):
-    return HttpResponse('Список товаров')
+def products(request, id):
+    return HttpResponse(f'Товар  {id}')
 
-def new(request):
-    return HttpResponse('Новые товары')
+def comments(request, id):
+    return HttpResponse(f'Комментарии о товаре {id}')
 
-def top(request):
-    return HttpResponse('Наиболее популярные товары')
+def questions(request, id):
+    return HttpResponse(f'Вопросы о товаре {id}')
