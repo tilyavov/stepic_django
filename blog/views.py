@@ -1,14 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('Главная страница')
 
-def products(request, id):
-    return HttpResponse(f'Товар  {id}')
-
-def comments(request, id):
-    return HttpResponse(f'Комментарии о товаре {id}')
-
-def questions(request, id):
-    return HttpResponse(f'Вопросы о товаре {id}')
+def user(request):
+    name = request.GET.get('name', 'USER')
+    age = request.GET.get('age', 0)
+    return HttpResponse(f'<h2>Имя: {name}, Возраст: {age}</h2>')
