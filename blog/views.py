@@ -1,13 +1,16 @@
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseForbidden, HttpResponseBadRequest
 
-def index(request):
-    return HttpResponse('Главная страница')
+def index(request, id):
+    people = [None, 'Sam', 'Bob']
+    if id in range(len(people)):
+        return HttpResponse(people[id])
+    else:
+        return HttpResponseNotFound('Not Found')
 
-def about(request):
-    return HttpResponse('About')
-
-def contact(request):
-    return HttpResponseRedirect('/about')
-
-def details(request):
-    return HttpResponsePermanentRedirect('/')
+def access(request, age):
+    if age not in range(1,111):
+        return HttpResponseBadRequest('Некорректные данные')
+    elif age > 17:
+        return HttpResponse('Доступ разрешён')
+    else:
+        return HttpResponseForbidden('Доступ заблокирован: недостаточно лет')
