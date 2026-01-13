@@ -1,16 +1,17 @@
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseForbidden, HttpResponseBadRequest
+from django.http import HttpResponse
 
-def index(request, id):
-    people = [None, 'Sam', 'Bob']
-    if id in range(len(people)):
-        return HttpResponse(people[id])
-    else:
-        return HttpResponseNotFound('Not Found')
 
-def access(request, age):
-    if age not in range(1,111):
-        return HttpResponseBadRequest('Некорректные данные')
-    elif age > 17:
-        return HttpResponse('Доступ разрешён')
-    else:
-        return HttpResponseForbidden('Доступ заблокирован: недостаточно лет')
+def index(request):
+    return HttpResponse("Главная страница")
+
+
+def products(request):
+    return HttpResponse("Список товаров")
+
+
+def new(request):
+    return HttpResponse("Новые товары")
+
+
+def top(request):
+    return HttpResponse("Наиболее популярные товары")
