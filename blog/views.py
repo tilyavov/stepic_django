@@ -1,10 +1,6 @@
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Index")
+    return render(request, 'blog/index.html')
 
-def contact(request):
-    return HttpResponse('Contact')
-
-def support(request):
-    return HttpResponseRedirect('/contact')
