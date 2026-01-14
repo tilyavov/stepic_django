@@ -2,6 +2,5 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 def index(request):
-    cat = ["Python", "Java", "JS", "Go", "C#", "Kotlin"]
-    return render(request, 'blog/index.html', context={'cat': cat})
+    return render(request, 'blog/index.html', context={"body": "<h1>Hello World!</h1>"})
 

@@ -5,12 +5,18 @@
     <title>Учу Django</title>
 </head>
 <body>
-    <h1>Тег для вывода информации в цикле</h1>
 
-    {% for item in cat %}
-        <h3>{{item}}</h3>
-    {% empty %}
-        <h1>Список пуст!</h1>
-    {% endfor %}
+    {% with name="Tom" age=29 %}
+    <div>
+        <p>Name: {{ name }}</p>
+        <p>Age: {{ age }}</p>
+    </div>
+    {% endwith %}
+
+    {{ body }}
+ 
+    {% autoescape off %}
+        {{ body }}
+    {% endautoescape %}
 </body>
 </html>
