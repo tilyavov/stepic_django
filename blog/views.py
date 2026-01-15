@@ -6,5 +6,15 @@ def index(request):
 
 
 def user(request):
-    data = {'name': 'pavel', 'year': 1}
-    return render(request, "blog/users.html", context={'item': data})
+    user_list = [
+             {'name': 'Дмитрий', 'experience': 9},
+             {'name': 'Павел',   'experience': 5},
+             {'name': 'Алексей', 'experience': 3},
+             {'name': 'Иван',    'experience': 0},
+             {'name': 'Денис',   'experience': 2},
+             {'name': 'Игорь',   'experience': 7},
+             {'name': 'Руслан',  'experience': 1},
+             {'name': 'Евгений', 'experience': 4},
+             {'name': 'Андрей',  'experience': 2},
+             {'name': 'Николай', 'experience': 8}]
+    return render(request, "blog/users.html", context={'item': user_list})

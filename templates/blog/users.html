@@ -8,11 +8,12 @@
 </head>
 <body>
     {% block content %}
-        {% if item.year >= 5 %}
-            <h1>Сотрудник {{item.name}} работает 5 - лет или больше</h1>
-        {% else %}
-            <h1>Сотрудник {{item.name}} работает меньше 5 - лет</h1>
-        {% endif %}
+    <h1>Новые сотрудники</h1>
+        {% for i in item %}
+        <ol>
+            <li>{{i.name}}</li>
+        </ol>
+        {% endfor %}
     {% endblock content %}
 </body>
 </html>
