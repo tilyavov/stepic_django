@@ -6,5 +6,5 @@ def index(request):
 
 
 def user(request):
-    data = {'name': 'Павел', 'age': 45, 'phone': '+79234567891', 'email': 'pavel@pavel.com'}
-    return render(request, "blog/users.html", context=data)
+    data = ['Павел', 45, '+79234567891', 'pavel@pavel.com']
+    return render(request, "blog/users.html", context={'item': data})

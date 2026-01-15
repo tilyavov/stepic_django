@@ -10,10 +10,10 @@
     {% block content %}
         <h1>Профиль пользователя</h1>
             <ul>
-                <li>User name: {{name}}</li>
-                <li>Age: {{age}}</li>
-                <li>Telephone: {{phone}}</li>
-                <li>E-mail: {{email }}</li>
+                <li>User name: {{item.0}}</li>
+                <li>Age: {{item.1}}</li>
+                <li>Telephone: {{item.2}}</li>
+                <li>E-mail: {{item.3}}</li>
             </ul>
     {% endblock content %}
 </body>
