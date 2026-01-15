@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,18 +6,6 @@
     <title>Учу Django</title>
 </head>
 <body>
-
-    {% with name="Tom" age=29 %}
-    <div>
-        <p>Name: {{ name }}</p>
-        <p>Age: {{ age }}</p>
-    </div>
-    {% endwith %}
-
-    {{ body }}
- 
-    {% autoescape off %}
-        {{ body }}
-    {% endautoescape %}
+    <img src="{% static 'images/djnagologo.jpg' %}">
 </body>
 </html>
