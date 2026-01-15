@@ -8,13 +8,7 @@
 </head>
 <body>
     {% block content %}
-        <h1>Профиль пользователя</h1>
-            <ul>
-                <li>User name: {{item.0}}</li>
-                <li>Age: {{item.1}}</li>
-                <li>Telephone: {{item.2}}</li>
-                <li>E-mail: {{item.3}}</li>
-            </ul>
+        <h1>Сегодня: {% now 'd.m.y, Время: H:i' %}</h1>
     {% endblock content %}
 </body>
 </html>
